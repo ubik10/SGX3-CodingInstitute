@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +19,7 @@
     --deconstruct: #C42348;
     --reconstruct: #0F7173;
     --apply:       #C06000;
+    --stage:       #33526E;   /* sequencing only — cohort funnel, not a phase */
 
     --ink:    #16202B;
     --ink-60: #56626E;
@@ -142,9 +144,10 @@
       </h1>
     </div>
     <div class="byline">
-      <strong>Charlie Dey</strong><span class="affil"> · Texas Advanced Computing Center</span><br>
+      <strong>Charlie Dey</strong><span class="affil"> · Texas Advanced Computing Center, UT Austin</span><br>
       <strong>Je&rsquo;Aime Powell</strong><span class="affil"> · Omnibond Systems</span><br>
-      <strong>Linda B. Hayden</strong><span class="affil"> · Elizabeth City State University</span>
+      <strong>Linda B. Hayden</strong><span class="affil"> · Elizabeth City State University</span><br>
+      <strong>Kristine M. Christensen</strong><span class="affil"> · Moraine Valley Community College</span>
       <div class="award">NSF ACI-1547611 (SGCI) &nbsp;·&nbsp; NSF 2231406 (SGX3)</div>
     </div>
   </header>
@@ -253,39 +256,39 @@
 
       <section>
         <h2><span class="num">04</span> Cohort &amp; delivery</h2>
-        <svg viewBox="0 0 900 250" style="width:100%;height:auto" role="img" aria-label="Cohort flow: 16 Institute participants plus 5 hackathon-only entrants form 4 teams across 3 tracks, shipping 4 portals">
-          <g font-size="19" fill="#56626E">
-            <text x="0"   y="24">INSTITUTE</text>
-            <text x="250" y="24">HACKATHON</text>
-            <text x="530" y="24">TEAMS</text>
-            <text x="740" y="24">SHIPPED</text>
+        <svg viewBox="0 0 900 300" style="width:100%;height:auto" role="img" aria-label="Cohort funnel: 16 Institute participants, 21 at the hackathon including 5 untrained entrants, forming 4 teams that shipped 4 gateway portals">
+          <g font-size="19" fill="#56626E" letter-spacing="1.5">
+            <text x="0"   y="22">INSTITUTE</text>
+            <text x="220" y="22">HACKATHON</text>
+            <text x="440" y="22">TEAMS</text>
+            <text x="660" y="22">SHIPPED</text>
           </g>
 
-          <rect x="0" y="45" width="200" height="86" fill="#0F7173"/>
-          <text x="18" y="103" font-size="52" font-weight="600" fill="#fff">16</text>
-          <text x="90" y="103" font-size="18" fill="#fff">trained</text>
+          <rect x="0"   y="40" width="200" height="120" fill="#33526E"/>
+          <rect x="220" y="40" width="200" height="120" fill="#0F7173"/>
+          <rect x="440" y="40" width="200" height="120" fill="#C06000"/>
+          <rect x="660" y="40" width="200" height="120" fill="#C42348"/>
 
-          <rect x="250" y="45" width="210" height="86" fill="#C06000"/>
-          <text x="268" y="103" font-size="52" font-weight="600" fill="#fff">21</text>
-          <text x="340" y="86" font-size="16" fill="#fff">16 trained</text>
-          <text x="340" y="110" font-size="16" fill="#fff">+5 untrained</text>
-
-          <rect x="530" y="45" width="150" height="86" fill="none" stroke="#16202B" stroke-width="3"/>
-          <text x="548" y="103" font-size="52" font-weight="600" fill="#16202B">4</text>
-          <text x="612" y="103" font-size="18" fill="#56626E">teams</text>
-
-          <rect x="740" y="45" width="150" height="86" fill="none" stroke="#16202B" stroke-width="3"/>
-          <text x="758" y="103" font-size="52" font-weight="600" fill="#16202B">4</text>
-          <text x="822" y="94" font-size="16" fill="#56626E">gateway</text>
-          <text x="822" y="114" font-size="16" fill="#56626E">portals</text>
+          <g font-size="58" font-weight="600" fill="#fff">
+            <text x="20"  y="105">16</text>
+            <text x="240" y="105">21</text>
+            <text x="460" y="105">4</text>
+            <text x="680" y="105">4</text>
+          </g>
+          <g font-size="16" fill="#fff" opacity="0.92">
+            <text x="20"  y="134">trained</text>
+            <text x="240" y="134">16 + 5 untrained</text>
+            <text x="460" y="134">teams</text>
+            <text x="680" y="134">gateway portals</text>
+          </g>
 
           <g stroke="#A8B0B8" stroke-width="3" fill="none">
-            <path d="M200 88 H250"/><path d="M450 88 H530"/><path d="M680 88 H740"/>
+            <path d="M200 100 H220"/><path d="M420 100 H440"/><path d="M640 100 H660"/>
           </g>
 
-          <text x="0" y="176" font-size="17" fill="#16202B" font-weight="600">3 tracks &#183; origin tracking, trend prediction, counterfactual analysis</text>
-          <text x="0" y="204" font-size="17" fill="#56626E">2 instructors &#183; 3 weeks instruction + 5-day hackathon &#183; fully online</text>
-          <text x="0" y="232" font-size="17" fill="#56626E">$2,000 stipend &#183; participants supplied by ADMI member departments</text>
+          <text x="0" y="212" font-size="17" fill="#16202B" font-weight="600">3 tracks &#183; origin tracking, trend prediction, counterfactual analysis</text>
+          <text x="0" y="242" font-size="17" fill="#56626E">2 instructors &#183; 3 weeks instruction + 5-day hackathon &#183; fully online</text>
+          <text x="0" y="272" font-size="17" fill="#56626E">$2,000 stipend &#183; participants supplied by ADMI member departments</text>
         </svg>
         <p class="cap">The five students who entered at the hackathon without Institute instruction afford a limited natural comparison on the primary Apply measure.</p>
       </section>
@@ -338,7 +341,7 @@
   <div class="band">
     <section>
       <h2><span class="num">06</span> The cycle contains itself</h2>
-      <p class="small">DRA runs at three nested scales. A single side quest is a full cycle; so is a week; so is the whole programm. Learners do not perceive the nesting unless it is made explicit &mdash; which is why prior material is deliberately revisited while new material is introduced.</p>
+      <p class="small">DRA runs at three nested scales. A single side quest is a full cycle; so is a week; so is the whole programme. Learners do not perceive the nesting unless it is made explicit &mdash; which is why prior material is deliberately revisited while new material is introduced.</p>
       <svg viewBox="0 0 760 440" style="width:100%;height:auto" role="img" aria-label="Three concentric rings, each divided into Deconstruct, Reconstruct and Apply arcs, representing the cycle operating at module, week and programme scale">
         <g transform="translate(230,215) rotate(-90)" fill="none" stroke-linecap="butt">
           <circle r="150" stroke="#C42348" stroke-width="26" stroke-dasharray="296.2 646.3" stroke-dashoffset="0"/>
@@ -355,7 +358,7 @@
         </g>
 
         <g font-size="21" fill="#16202B" font-weight="600">
-          <text x="440" y="120">PROGRAMM</text>
+          <text x="440" y="120">PROGRAMME</text>
           <text x="440" y="205">WEEK</text>
           <text x="440" y="290">MODULE</text>
         </g>
@@ -379,7 +382,7 @@
 
     <section>
       <h2><span class="num">07</span> What the graph becomes</h2>
-      <p class="small">One artifact carries the whole programme. Students build its skeleton, an agent scores its nodes, and in week four teams rebuild the pattern against subject matter the curriculum never touched.</p>
+      <p class="small">One artefact carries the whole programme. Students build its skeleton, an agent scores its nodes, and in week four teams rebuild the pattern against subject matter the curriculum never touched.</p>
       <svg viewBox="0 0 1180 440" style="width:100%;height:auto" role="img" aria-label="Three states of the knowledge graph: a sparse skeleton, an agent-scored graph with weighted nodes, and a denser graph rebuilt in new domains">
         <!-- state 1: skeleton -->
         <g>
