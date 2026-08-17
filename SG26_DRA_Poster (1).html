@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Art of the Hack — Science Gateways 2026 Poster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     POSTER: 48in x 36in landscape.
+     To change size, edit --w / --h below and the @page rule.
+     ============================================================ */
+  :root{
+    --w: 48in; --h: 36in;
+
+    /* tri-color phase system — color encodes phase, everywhere */
+    --deconstruct: #C42348;
+    --reconstruct: #0F7173;
+    --apply:       #C06000;
+
+    --ink:    #16202B;
+    --ink-60: #56626E;
+    --ink-30: #A8B0B8;
+    --rule:   #D7D2C6;
+    --ground: #FBFAF7;
+    --panel:  #F2EFE7;
+
+    --u: 0.115in;              /* spacing unit */
+  }
+
+  @page { size: 48in 36in; margin: 0; }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  body{
+    background:#59606B;
+    font-family:'Spectral', Georgia, serif;
+    color:var(--ink);
+    display:flex; justify-content:center; padding:0.5in;
+  }
+
+  .poster{
+    width:var(--w); height:var(--h);
+    flex:0 0 auto;
+    background:var(--ground);
+    position:relative;
+    display:grid;
+    grid-template-rows:auto auto auto 1fr auto;
+    padding:calc(var(--u)*5) calc(var(--u)*5) calc(var(--u)*4);
+    gap:calc(var(--u)*3.5);
+    overflow:hidden;
+  }
+
+  /* ---------- type roles ---------- */
+  .display{ font-family:'Barlow Condensed', 'Arial Narrow', sans-serif; font-weight:700; letter-spacing:-0.01em; line-height:0.95; }
+  .mono{ font-family:'IBM Plex Mono', ui-monospace, monospace; }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:15pt; font-weight:600;
+    letter-spacing:0.22em; text-transform:uppercase; color:var(--ink-60);
+  }
+
+  /* ---------- header ---------- */
+  header{ display:grid; grid-template-columns:1fr auto; align-items:end; gap:calc(var(--u)*4); }
+  h1{ font-family:'Barlow Condensed', sans-serif; font-weight:700; font-size:96pt; line-height:0.88; letter-spacing:-0.015em; max-width:26in; }
+  h1 .lede{ display:block; font-size:40pt; font-weight:500; color:var(--ink-60); letter-spacing:0.005em; margin-top:calc(var(--u)*1.5); line-height:1.05; }
+
+  .byline{ text-align:right; font-size:17pt; line-height:1.5; color:var(--ink); max-width:11in; }
+  .byline strong{ font-weight:600; }
+  .byline .affil{ color:var(--ink-60); font-size:15pt; }
+  .byline .award{ font-family:'IBM Plex Mono',monospace; font-size:13pt; color:var(--ink-60); margin-top:calc(var(--u)*1.5); letter-spacing:0.02em; }
+
+  /* tri-color rule — the poster's spine motif in miniature */
+  .tri-rule{ display:grid; grid-template-columns:1fr 1fr 1fr; height:0.09in; }
+  .tri-rule i:nth-child(1){ background:var(--deconstruct); }
+  .tri-rule i:nth-child(2){ background:var(--reconstruct); }
+  .tri-rule i:nth-child(3){ background:var(--apply); }
+
+  /* ---------- main grid ---------- */
+  main{ display:grid; grid-template-columns:1.32fr 1fr; gap:calc(var(--u)*4); align-items:start; }
+  .col{ display:flex; flex-direction:column; gap:calc(var(--u)*3.5); min-height:0; }
+
+  section{ display:flex; flex-direction:column; gap:calc(var(--u)*1.8); }
+  h2{
+    font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:38pt;
+    letter-spacing:0.005em; display:flex; align-items:baseline; gap:calc(var(--u)*1.5);
+  }
+  h2 .num{ font-family:'IBM Plex Mono',monospace; font-size:17pt; font-weight:600; color:var(--ink-30); }
+  p{ font-size:19pt; line-height:1.42; }
+  .small{ font-size:17pt; line-height:1.4; }
+
+  /* ---------- three phase cards ---------- */
+  .phases{ display:grid; grid-template-columns:repeat(3,1fr); gap:calc(var(--u)*2.5); }
+  .phase{ border-top:0.055in solid; padding-top:calc(var(--u)*2); display:flex; flex-direction:column; gap:calc(var(--u)*1.4); }
+  .phase.d{ border-color:var(--deconstruct); }
+  .phase.r{ border-color:var(--reconstruct); }
+  .phase.a{ border-color:var(--apply); }
+  .phase h3{ font-family:'Barlow Condensed',sans-serif; font-size:42pt; font-weight:700; line-height:0.95; }
+  .phase.d h3{ color:var(--deconstruct); }
+  .phase.r h3{ color:var(--reconstruct); }
+  .phase.a h3{ color:var(--apply); }
+  .phase p{ font-size:18pt; line-height:1.38; }
+
+  /* ---------- callout ---------- */
+  .callout{ border-left:0.055in solid var(--ink); padding-left:calc(var(--u)*2); }
+  .callout p{ font-size:24pt; line-height:1.32; font-style:italic; }
+
+  /* ---------- data panels ---------- */
+  .panel{ background:var(--panel); padding:calc(var(--u)*2.4); display:flex; flex-direction:column; gap:calc(var(--u)*1.6); }
+  .panel h4{ font-family:'Barlow Condensed',sans-serif; font-size:28pt; font-weight:600; }
+  .cap{ font-family:'IBM Plex Mono',monospace; font-size:13pt; color:var(--ink-60); line-height:1.45; letter-spacing:0.01em; }
+
+  /* ---------- lessons ---------- */
+  .lessons{ display:flex; flex-direction:column; gap:calc(var(--u)*1.5); }
+  .lesson{ display:grid; grid-template-columns:auto 1fr; gap:calc(var(--u)*1.8); align-items:start; }
+  .lesson .n{ font-family:'IBM Plex Mono',monospace; font-size:16pt; font-weight:600; color:var(--ink-30); padding-top:0.03in; }
+  .lesson b{ font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:23pt; display:block; letter-spacing:0.005em; }
+  .lesson span{ font-size:17pt; line-height:1.36; }
+
+  /* ---------- imagery band ---------- */
+  .stack{ display:flex; flex-direction:column; gap:calc(var(--u)*3); }
+  .band{ display:grid; grid-template-columns:0.72fr 1fr 0.62fr; gap:calc(var(--u)*3.5); align-items:start; border-top:0.02in solid var(--rule); padding-top:calc(var(--u)*3); }
+
+  /* ---------- footer ---------- */
+  footer{ display:grid; grid-template-columns:1fr auto; gap:calc(var(--u)*4); align-items:end; border-top:0.02in solid var(--rule); padding-top:calc(var(--u)*2); }
+  .refs{ font-size:13pt; line-height:1.5; color:var(--ink-60); columns:3; column-gap:calc(var(--u)*3); }
+  .repos{ font-family:'IBM Plex Mono',monospace; font-size:15pt; line-height:1.7; text-align:right; }
+  .repos b{ color:var(--ink); font-weight:600; }
+
+  svg text{ font-family:'IBM Plex Mono', monospace; }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <header>
+    <div>
+      <div class="eyebrow" style="margin-bottom:0.18in">Science Gateways 2026 &nbsp;·&nbsp; SGX3 &nbsp;·&nbsp; HackHPC@ADMI26</div>
+      <h1 class="display">The Art of the Hack
+        <span class="lede">Deconstruct&ndash;Reconstruct&ndash;Apply: a constructionist framework for AI-enabled gateway development</span>
+      </h1>
+    </div>
+    <div class="byline">
+      <strong>Charlie Dey</strong><span class="affil"> · Texas Advanced Computing Center, UT Austin</span><br>
+      <strong>Je&rsquo;Aime Powell</strong><span class="affil"> · Omnibond Systems</span><br>
+      <strong>Linda B. Hayden</strong><span class="affil"> · Elizabeth City State University</span>
+      <div class="award">NSF ACI-1547611 (SGCI) &nbsp;·&nbsp; NSF 2231406 (SGX3)</div>
+    </div>
+  </header>
+
+  <div class="tri-rule"><i></i><i></i><i></i></div>
+
+  <main>
+    <!-- ================= LEFT COLUMN ================= -->
+    <div class="col">
+
+      <section>
+        <h2><span class="num">01</span> The framework</h2>
+        <p>Hackathons work, but accounts of <em>why</em> describe what occurs rather than model it. LLM copilots sharpen the problem: students produce working code for systems they cannot explain. The scarce competency is no longer production but <strong>diagnosis</strong>.</p>
+
+        <div class="phases">
+          <div class="phase d">
+            <h3>Deconstruct</h3>
+            <p>Prior frameworks start from a working artifact. DRA starts from a <strong>deliberate failure of learner intuition</strong> against a system the learner trusts.</p>
+          </div>
+          <div class="phase r">
+            <h3>Reconstruct</h3>
+            <p>Each deconstruction pairs with a rebuild in Python, performed <em>with</em> an LLM copilot under an explicit collaborative-engineering protocol.</p>
+          </div>
+          <div class="phase a">
+            <h3>Apply</h3>
+            <p>Learners redeploy the toolchain in a domain never covered &mdash; then defend it publicly. Gateway construction is the deliverable, not the curriculum.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <p>Deconstruction changes hands. Weeks 1&ndash;3 it is instructor-engineered; week 4 it is student-enacted. The hackathon is a transfer test <em>for the framework itself</em>&nbsp;&mdash;&nbsp;not merely its final phase.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="num">02</span> Four weeks, three phases</h2>
+        <svg viewBox="0 0 1600 300" style="width:100%;height:auto" role="img" aria-label="Program timeline, June 1 to 26 2026, mapped to the three framework phases">
+          <!-- graph spine: nodes accumulate left to right, mirroring the knowledge graph students build -->
+          <line x1="60" y1="150" x2="1540" y2="150" stroke="#D7D2C6" stroke-width="3"/>
+
+          <!-- phase bands -->
+          <rect x="60"  y="128" width="560" height="44" fill="#C42348"/>
+          <rect x="620" y="128" width="440" height="44" fill="#0F7173"/>
+          <rect x="1060" y="128" width="480" height="44" fill="#C06000"/>
+
+          <!-- band labels -->
+          <text x="80"   y="157" fill="#fff" font-size="21" font-weight="600" letter-spacing="2">DECONSTRUCT</text>
+          <text x="640"  y="157" fill="#fff" font-size="21" font-weight="600" letter-spacing="2">RECONSTRUCT</text>
+          <text x="1080" y="157" fill="#fff" font-size="21" font-weight="600" letter-spacing="2">APPLY</text>
+
+          <!-- week markers above -->
+          <g font-size="20" fill="#16202B" font-weight="600">
+            <text x="60"   y="72">Weeks 1&#8211;2</text>
+            <text x="620"  y="72">Week 3</text>
+            <text x="1060" y="72">Week 4</text>
+          </g>
+          <g font-size="17" fill="#56626E">
+            <text x="60"   y="100">Jun 1&#8211;12 &#183; tokenization, vectors, graphs, APIs</text>
+            <text x="620"  y="100">Jun 15&#8211;19 &#183; NLP, prompts, agents, GraphRAG</text>
+            <text x="1060" y="100">Jun 22&#8211;26 &#183; HackHPC@ADMI26</text>
+          </g>
+
+          <!-- accumulating graph nodes below the spine -->
+          <g>
+            <circle cx="150" cy="230" r="11" fill="#C42348"/>
+            <circle cx="300" cy="230" r="11" fill="#C42348"/>
+            <line x1="150" y1="230" x2="300" y2="230" stroke="#C42348" stroke-width="2.5"/>
+            <circle cx="450" cy="230" r="11" fill="#C42348"/>
+            <line x1="300" y1="230" x2="450" y2="230" stroke="#C42348" stroke-width="2.5"/>
+            <line x1="150" y1="230" x2="450" y2="230" stroke="#C42348" stroke-width="1.5" opacity="0.4"/>
+
+            <circle cx="700" cy="230" r="11" fill="#0F7173"/>
+            <line x1="450" y1="230" x2="700" y2="230" stroke="#A8B0B8" stroke-width="2" stroke-dasharray="6 5"/>
+            <circle cx="850" cy="230" r="11" fill="#0F7173"/>
+            <circle cx="980" cy="230" r="11" fill="#0F7173"/>
+            <line x1="700" y1="230" x2="850" y2="230" stroke="#0F7173" stroke-width="2.5"/>
+            <line x1="850" y1="230" x2="980" y2="230" stroke="#0F7173" stroke-width="2.5"/>
+            <line x1="700" y1="230" x2="980" y2="230" stroke="#0F7173" stroke-width="1.5" opacity="0.4"/>
+
+            <circle cx="1180" cy="230" r="14" fill="#C06000"/>
+            <circle cx="1310" cy="230" r="14" fill="#C06000"/>
+            <circle cx="1440" cy="230" r="14" fill="#C06000"/>
+            <line x1="980"  y1="230" x2="1180" y2="230" stroke="#A8B0B8" stroke-width="2" stroke-dasharray="6 5"/>
+            <line x1="1180" y1="230" x2="1310" y2="230" stroke="#C06000" stroke-width="3"/>
+            <line x1="1310" y1="230" x2="1440" y2="230" stroke="#C06000" stroke-width="3"/>
+            <line x1="1180" y1="230" x2="1440" y2="230" stroke="#C06000" stroke-width="2" opacity="0.45"/>
+          </g>
+          <text x="60" y="285" font-size="16" fill="#56626E">A single persistent knowledge graph accumulates across all four weeks &#8212; skeleton, then agent-scored, then rebuilt in new domains.</text>
+        </svg>
+      </section>
+
+      <section>
+        <h2><span class="num">03</span> Lessons learned</h2>
+        <div class="lessons">
+          <div class="lesson"><span class="n">01</span><div><b>Narrative buy-in is a precondition</b><span>Students engage with deconstruction only when the data is meaningful and exercises accumulate toward a declared destination. Absent an explicit arc, Reconstruct reads as disconnected drills.</span></div></div>
+          <div class="lesson"><span class="n">02</span><div><b>Environment friction displaces cognitive work</b><span>Python and module versions must be resolved before instruction begins. Time spent fighting an installation is removed from Deconstruct, and early tooling failure produces disengagement later content does not recover.</span></div></div>
+          <div class="lesson"><span class="n">03</span><div><b>Recursion must be made explicit</b><span>Learners do not perceive DRA operating at module, week, and program scale unless prior material is revisited while new material is introduced.</span></div></div>
+          <div class="lesson"><span class="n">04</span><div><b>Deconstruction requires elicited commitment</b><span>The phase depends on learners stating a prediction <em>before</em> seeing the result. Prompt density is a design parameter, not instructor style.</span></div></div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ================= RIGHT COLUMN ================= -->
+    <div class="col">
+
+      <section>
+        <h2><span class="num">04</span> Cohort &amp; delivery</h2>
+        <svg viewBox="0 0 900 250" style="width:100%;height:auto" role="img" aria-label="Cohort flow: 16 Institute participants plus 5 hackathon-only entrants form 4 teams across 3 tracks, shipping 4 portals">
+          <g font-size="19" fill="#56626E">
+            <text x="0"   y="24">INSTITUTE</text>
+            <text x="250" y="24">HACKATHON</text>
+            <text x="530" y="24">TEAMS</text>
+            <text x="740" y="24">SHIPPED</text>
+          </g>
+
+          <rect x="0" y="45" width="200" height="86" fill="#0F7173"/>
+          <text x="18" y="103" font-size="52" font-weight="600" fill="#fff">16</text>
+          <text x="90" y="103" font-size="18" fill="#fff">trained</text>
+
+          <rect x="250" y="45" width="200" height="86" fill="#C06000"/>
+          <text x="268" y="103" font-size="52" font-weight="600" fill="#fff">21</text>
+          <text x="340" y="86" font-size="16" fill="#fff">16 trained</text>
+          <text x="340" y="110" font-size="16" fill="#fff">+5 untrained</text>
+
+          <rect x="530" y="45" width="150" height="86" fill="none" stroke="#16202B" stroke-width="3"/>
+          <text x="548" y="103" font-size="52" font-weight="600" fill="#16202B">4</text>
+          <text x="612" y="103" font-size="18" fill="#56626E">teams</text>
+
+          <rect x="740" y="45" width="150" height="86" fill="none" stroke="#16202B" stroke-width="3"/>
+          <text x="758" y="103" font-size="52" font-weight="600" fill="#16202B">4</text>
+          <text x="822" y="94" font-size="16" fill="#56626E">gateway</text>
+          <text x="822" y="114" font-size="16" fill="#56626E">portals</text>
+
+          <g stroke="#A8B0B8" stroke-width="3" fill="none">
+            <path d="M200 88 H250"/><path d="M450 88 H530"/><path d="M680 88 H740"/>
+          </g>
+
+          <text x="0" y="176" font-size="17" fill="#16202B" font-weight="600">3 tracks &#183; origin tracking, trend prediction, counterfactual analysis</text>
+          <text x="0" y="204" font-size="17" fill="#56626E">2 instructors &#183; 3 weeks instruction + 5-day hackathon &#183; fully online</text>
+          <text x="0" y="232" font-size="17" fill="#56626E">$2,000 stipend &#183; participants supplied by ADMI member departments</text>
+        </svg>
+        <p class="cap">The five students who entered at the hackathon without Institute instruction afford a limited natural comparison on the primary Apply measure.</p>
+      </section>
+
+      <section>
+        <h2><span class="num">05</span> Evidence of transfer</h2>
+        <p class="small">Every team independently adopted techniques the Institute never taught, and applied them to domains the curriculum never covered. Unprompted extension beyond the taught toolchain is the clearest signal that Apply functioned as intended.</p>
+
+        <svg viewBox="0 0 900 400" style="width:100%;height:auto" role="img" aria-label="Techniques taught during the Institute versus techniques teams independently adopted during the hackathon">
+          <text x="0"   y="22" font-size="19" fill="#0F7173" font-weight="600" letter-spacing="1">TAUGHT</text>
+          <text x="480" y="22" font-size="19" fill="#C06000" font-weight="600" letter-spacing="1">INDEPENDENTLY ADOPTED</text>
+          <line x1="0" y1="34" x2="380" y2="34" stroke="#0F7173" stroke-width="3"/>
+          <line x1="480" y1="34" x2="900" y2="34" stroke="#C06000" stroke-width="3"/>
+
+          <g font-size="20" fill="#16202B">
+            <text x="0" y="76">NetworkX knowledge graphs</text>
+            <text x="0" y="118">spaCy dependency parsing</text>
+            <text x="0" y="160">Sentence embeddings</text>
+            <text x="0" y="202">ReAct agents · Pydantic</text>
+            <text x="0" y="244">Ollama · LM Studio</text>
+            <text x="0" y="286">GraphRAG pipelines</text>
+            <text x="0" y="328">Wikipedia / MediaWiki APIs</text>
+          </g>
+
+          <g font-size="20" fill="#16202B">
+            <text x="480" y="76">PageRank centrality</text>
+            <text x="480" y="118">D3.js interactive dashboard</text>
+            <text x="480" y="160">XGBoost regression</text>
+            <text x="480" y="202">HuggingFace REBEL extraction</text>
+            <text x="480" y="244">Wikidata SPARQL</text>
+            <text x="480" y="286">6-year revision snapshots</text>
+          </g>
+
+          <g stroke="#C06000" stroke-width="2" stroke-dasharray="7 6" opacity="0.55">
+            <path d="M300 70 C 400 70, 400 70, 470 70" fill="none"/>
+            <path d="M300 112 C 400 112, 400 112, 470 112" fill="none"/>
+            <path d="M300 154 C 400 154, 400 154, 470 154" fill="none"/>
+            <path d="M300 196 C 400 196, 400 196, 470 196" fill="none"/>
+          </g>
+
+          <line x1="0" y1="356" x2="900" y2="356" stroke="#D7D2C6" stroke-width="2"/>
+          <text x="0" y="386" font-size="18" fill="#56626E">Applied to health disparities, robotics, technology origins, link-graph trends.</text>
+        </svg>
+      </section>
+
+
+    </div>
+  </main>
+
+  <div class="band">
+    <section>
+      <h2><span class="num">06</span> The cycle contains itself</h2>
+      <p class="small">DRA runs at three nested scales. A single side quest is a full cycle; so is a week; so is the whole programme. Learners do not perceive the nesting unless it is made explicit &mdash; which is why prior material is deliberately revisited while new material is introduced.</p>
+      <svg viewBox="0 0 760 440" style="width:100%;height:auto" role="img" aria-label="Three concentric rings, each divided into Deconstruct, Reconstruct and Apply arcs, representing the cycle operating at module, week and programme scale">
+        <g transform="translate(230,215) rotate(-90)" fill="none" stroke-linecap="butt">
+          <circle r="150" stroke="#C42348" stroke-width="26" stroke-dasharray="296.2 646.3" stroke-dashoffset="0"/>
+          <circle r="150" stroke="#0F7173" stroke-width="26" stroke-dasharray="296.2 646.3" stroke-dashoffset="-314.2"/>
+          <circle r="150" stroke="#C06000" stroke-width="26" stroke-dasharray="296.2 646.3" stroke-dashoffset="-628.3"/>
+
+          <circle r="105" stroke="#C42348" stroke-width="22" stroke-dasharray="204.9 454.8" stroke-dashoffset="0" opacity="0.72"/>
+          <circle r="105" stroke="#0F7173" stroke-width="22" stroke-dasharray="204.9 454.8" stroke-dashoffset="-219.9" opacity="0.72"/>
+          <circle r="105" stroke="#C06000" stroke-width="22" stroke-dasharray="204.9 454.8" stroke-dashoffset="-439.8" opacity="0.72"/>
+
+          <circle r="60" stroke="#C42348" stroke-width="18" stroke-dasharray="114.7 262.3" stroke-dashoffset="0" opacity="0.45"/>
+          <circle r="60" stroke="#0F7173" stroke-width="18" stroke-dasharray="114.7 262.3" stroke-dashoffset="-125.7" opacity="0.45"/>
+          <circle r="60" stroke="#C06000" stroke-width="18" stroke-dasharray="114.7 262.3" stroke-dashoffset="-251.3" opacity="0.45"/>
+        </g>
+
+        <g font-size="21" fill="#16202B" font-weight="600">
+          <text x="440" y="120">PROGRAMME</text>
+          <text x="440" y="205">WEEK</text>
+          <text x="440" y="290">MODULE</text>
+        </g>
+        <g font-size="18" fill="#56626E">
+          <text x="440" y="148">four weeks, one arc</text>
+          <text x="440" y="233">tutorial &#8594; exercise &#8594; reveal</text>
+          <text x="440" y="318">one side quest</text>
+        </g>
+        <g stroke="#A8B0B8" stroke-width="2">
+          <line x1="382" y1="112" x2="428" y2="112"/>
+          <line x1="337" y1="197" x2="428" y2="197"/>
+          <line x1="292" y1="282" x2="428" y2="282"/>
+        </g>
+        <g font-size="19" font-weight="600">
+          <text x="40" y="410" fill="#C42348">DECONSTRUCT</text>
+          <text x="270" y="410" fill="#0F7173">RECONSTRUCT</text>
+          <text x="510" y="410" fill="#C06000">APPLY</text>
+        </g>
+      </svg>
+    </section>
+
+    <section>
+      <h2><span class="num">07</span> What the graph becomes</h2>
+      <p class="small">One artefact carries the whole programme. Students build its skeleton, an agent scores its nodes, and in week four teams rebuild the pattern against subject matter the curriculum never touched.</p>
+      <svg viewBox="0 0 1180 440" style="width:100%;height:auto" role="img" aria-label="Three states of the knowledge graph: a sparse skeleton, an agent-scored graph with weighted nodes, and a denser graph rebuilt in new domains">
+        <!-- state 1: skeleton -->
+        <g>
+          <g stroke="#C42348" stroke-width="2.5" opacity="0.75">
+            <line x1="90" y1="80"  x2="185" y2="140"/>
+            <line x1="185" y1="140" x2="105" y2="215"/>
+            <line x1="185" y1="140" x2="250" y2="235"/>
+            <line x1="105" y1="215" x2="160" y2="300"/>
+          </g>
+          <g fill="#C42348">
+            <circle cx="90"  cy="80"  r="13"/>
+            <circle cx="185" cy="140" r="13"/>
+            <circle cx="105" cy="215" r="13"/>
+            <circle cx="250" cy="235" r="13"/>
+            <circle cx="160" cy="300" r="13"/>
+          </g>
+          <text x="60" y="372" font-size="21" font-weight="600" fill="#C42348">SKELETON</text>
+          <text x="60" y="400" font-size="17" fill="#56626E">weeks 1&#8211;2 &#183; nodes and edges</text>
+        </g>
+
+        <text x="330" y="205" font-size="34" fill="#A8B0B8">&#8594;</text>
+
+        <!-- state 2: agent-scored, weighted nodes -->
+        <g transform="translate(390,0)">
+          <g stroke="#0F7173" stroke-width="2.5" opacity="0.7">
+            <line x1="90" y1="80"  x2="185" y2="140"/>
+            <line x1="185" y1="140" x2="105" y2="215"/>
+            <line x1="185" y1="140" x2="250" y2="235"/>
+            <line x1="105" y1="215" x2="160" y2="300"/>
+            <line x1="90"  y1="80"  x2="250" y2="235"/>
+            <line x1="250" y1="235" x2="160" y2="300"/>
+            <line x1="105" y1="215" x2="250" y2="235"/>
+          </g>
+          <g fill="#0F7173">
+            <circle cx="90"  cy="80"  r="10"/>
+            <circle cx="185" cy="140" r="26"/>
+            <circle cx="105" cy="215" r="16"/>
+            <circle cx="250" cy="235" r="21"/>
+            <circle cx="160" cy="300" r="12"/>
+          </g>
+          <text x="60" y="372" font-size="21" font-weight="600" fill="#0F7173">AGENT-SCORED</text>
+          <text x="60" y="400" font-size="17" fill="#56626E">week 3 &#183; weights written back</text>
+        </g>
+
+        <text x="720" y="205" font-size="34" fill="#A8B0B8">&#8594;</text>
+
+        <!-- state 3: rebuilt in new domains -->
+        <g transform="translate(780,0)">
+          <g stroke="#C06000" stroke-width="2.5" opacity="0.65">
+            <line x1="70"  y1="110" x2="165" y2="70"/>
+            <line x1="165" y1="70"  x2="255" y2="130"/>
+            <line x1="70"  y1="110" x2="130" y2="190"/>
+            <line x1="130" y1="190" x2="255" y2="130"/>
+            <line x1="130" y1="190" x2="200" y2="260"/>
+            <line x1="200" y1="260" x2="255" y2="130"/>
+            <line x1="200" y1="260" x2="95"  y2="290"/>
+            <line x1="95"  y1="290" x2="130" y2="190"/>
+            <line x1="255" y1="130" x2="290" y2="240"/>
+            <line x1="290" y1="240" x2="200" y2="260"/>
+          </g>
+          <g fill="#C06000">
+            <circle cx="70"  cy="110" r="12"/>
+            <circle cx="165" cy="70"  r="17"/>
+            <circle cx="255" cy="130" r="24"/>
+            <circle cx="130" cy="190" r="19"/>
+            <circle cx="200" cy="260" r="22"/>
+            <circle cx="95"  cy="290" r="13"/>
+            <circle cx="290" cy="240" r="15"/>
+          </g>
+          <text x="60" y="372" font-size="21" font-weight="600" fill="#C06000">REBUILT ELSEWHERE</text>
+          <text x="60" y="400" font-size="17" fill="#56626E">week 4 &#183; new domains</text>
+        </g>
+      </svg>
+    </section>
+    <div class="stack">
+      <section>
+        <div class="panel">
+          <h4>Assessment</h4>
+          <p class="small"><strong>Externally administered certifications.</strong> Participants completed Google AI Professional, Google Cloud Computing Foundations, and Kaggle Python and Machine Learning credentials during the program &mdash; a competence measure that does not depend on self-report.</p>
+          <p class="small"><strong>Hackathon artifacts.</strong> All four submissions scored against the event&rsquo;s own award criteria as an a priori rubric: analytical depth, portal communication, integrated impact. Primary Apply evidence.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="panel">
+          <h4>Limitations</h4>
+          <p class="small">A single cohort of sixteen trained participants. No randomized control, no comparison against traditional instruction. This is a case study of a framework&rsquo;s first formalized instantiation &mdash; not a study of its effects. Claims of accelerated skill acquisition are advanced as hypotheses for controlled study.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <div class="eyebrow" style="margin-bottom:0.1in">Selected references</div>
+      <div class="refs">
+        [1] Papert. <i>Mindstorms.</i> Basic Books, 1980.<br>
+        [2] Collins, Brown &amp; Newman. Cognitive apprenticeship. 1989.<br>
+        [3] Sch&ouml;n. <i>The Reflective Practitioner.</i> 1983.<br>
+        [4] Lee et al. Computational thinking for youth in practice. <i>ACM Inroads</i> 2(1), 2011.<br>
+        [5] Sentance, Waite &amp; Kallia. Teaching programming with PRIMM. <i>CSE</i> 29(2&ndash;3), 2019.<br>
+        [6] Dey et al. Coding through Storytelling. <i>JOCSE</i> 16(2), 2025, 5&ndash;9.<br>
+        [7] Falk et al. The Future of Hackathon Research and Practice. <i>IEEE Access</i> 12, 2024.<br>
+        [8] Holmen et al. FacultyHack Events. <i>ICGJ &rsquo;24</i>, 2024, 67&ndash;71.<br>
+        [9] Tabalba et al. Considering Workforce Development for AI in Scientific Research. <i>PEARC &rsquo;26</i>.
+      </div>
+    </div>
+    <div class="repos">
+      <b>Institute</b> &nbsp;hackhpc.github.io/sgx3codinginstitute26<br>
+      <b>Hackathon</b> &nbsp;hackhpc.github.io/admi26<br>
+      <b>Series</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hackhpc.github.io &nbsp;·&nbsp; 7 years, 5 ADMI events
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
